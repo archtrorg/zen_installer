@@ -466,7 +466,7 @@ echo "75"
 if [ "$grb" = "0" ]
 	then if [ "$SYSTEM" = 'BIOS' ]
 		then echo "# Installing Bootloader..."
-		pacstrap /mnt grub
+		pacstrap /mnt grub os-prober
 		arch_chroot "grub-install --target=i386-pc $grub_device"
 		arch_chroot "grub-mkconfig -o /boot/grub/grub.cfg"
 	else
