@@ -521,7 +521,7 @@ rm .passwd
 
 #adding user
 echo "# Making new user..."
-arch_chroot "useradd -m -g users -G optical,storage,wheel,video,audio,users,power,network,log -s /bin/bash $username"
+arch_chroot "useradd -m -g users -G adm,lp,optical,storage,wheel,video,audio,users,power,network,log -s /bin/bash $username"
 touch .passwd
 echo -e "$userpasswd\n$userpasswd2" > .passwd
 arch_chroot "passwd $username" < .passwd >/dev/null
